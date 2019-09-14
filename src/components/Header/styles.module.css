@@ -1,0 +1,9 @@
+.root {
+    height: 70px;
+    color: white;
+}
+
+.row {
+    width: 100%;
+    align-items: baseline;
+}
