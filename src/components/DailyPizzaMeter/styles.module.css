@@ -1,0 +1,29 @@
+
+.root {
+    display: inline-block;
+    position: relative;
+}
+
+.empty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/pizza_slice_mono.svg");
+}
+
+.full {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-image: url("../../assets/pizza_slice.svg");
+}

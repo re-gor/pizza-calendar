@@ -1,0 +1,48 @@
+.root {
+    padding: 25px;
+}
+
+.header {
+    font-style: italic;
+    text-transform: capitalize;
+    float: right;
+}
+
+.root table td {
+    vertical-align: bottom;
+}
+
+.root thead tr td:not(:first-child),
+.root tbody tr td:not(:first-child) {
+    text-align: end;
+}
+
+.root thead tr td:first-child,
+.root tbody tr td:first-child {
+    font-weight: bolder;
+    font-size: .8rem;
+}
+
+
+.date:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+.date.outOfMonth {
+    background-color: rgba(255, 255, 255, .9);
+    color: gray;
+    cursor: not-allowed;
+}
+
+.date .dailyPizzaMeter {
+    display: inline-block;
+    float: left;
+    vertical-align: center;
+    width: 18px;
+    height: 18px;
+}
+
+.date.outOfMonth .dailyPizzaMeter {
+    opacity: 0.5;
+}
