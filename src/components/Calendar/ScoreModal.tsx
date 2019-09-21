@@ -57,7 +57,7 @@ const ScoreModal = ({
                         <FormLabel>
                             Comment
                         </FormLabel>
-                        <Form.Control as="textarea" rows="3" name='comment' />
+                        <Form.Control as="textarea" rows="3" name='comment' defaultValue={comment} />
                     </Form.Group>
                 </Form>
             </Modal.Body>
