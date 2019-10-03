@@ -7,11 +7,5 @@
 }
 
 .content {
-  margin: 20px 0 80px;
-}
-
-@media (max-width: 400px) {
-  .content {
-    margin-bottom: 160px;
-  }
+  margin-top: 20px;
 }

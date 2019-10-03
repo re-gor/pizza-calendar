@@ -1,9 +1,4 @@
-import {
-    Actions,
-    SET_DAY_INFO,
-    SET_STORAGE,
-    CLEAR_STORAGE
-} from 'actions/pizzaStorage';
+import {Actions, CLEAR_STORAGE, SET_DAY_INFO, SET_SETTINGS, SET_STORAGE} from 'actions/pizzaStorage';
 
 export type PizzaState = {
     calendar: {[key in string]: {
@@ -40,6 +35,11 @@ export function reducer(state: PizzaState, action: Actions): PizzaState {
                         comment,
                     },
                 },
+            };
+        case SET_SETTINGS:
+            return {
+                ...state,
+                settings: action.payload,
             };
         case SET_STORAGE:
             return action.payload.state;

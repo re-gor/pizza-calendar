@@ -5,10 +5,11 @@ import IconsDisclaimer from 'components/IconsDisclaimer';
 
 const Footer = () => (
     <footer className={styles.root}>
+        <div className={styles.padder} />
         <Navbar bg='dark' fixed='bottom' variant={'dark'}>
             <Container>
                 <Row className={styles.row}>
-                    <Col  lg='auto' md='auto' sm='auto' xs='auto'>
+                    <Col lg='auto' md='auto' sm='auto' xs='auto'>
                         <Navbar.Text>
                             No copyright, for non-commercial use only
                         </Navbar.Text>

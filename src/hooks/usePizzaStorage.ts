@@ -1,16 +1,30 @@
-import {useReducer} from 'react';
+import {useEffect, useReducer} from 'react';
 import {INITIAL_STATE, PizzaState, reducer} from 'reducers/pizzaStorage';
-import useLocalStorage from './useLocalStorage';
-import {DispatchPizzaActions} from 'actions/pizzaStorage';
+import {Actions} from 'actions/pizzaStorage';
 
 const STORAGE_KEY = '__PIZZA_STORAGE_KEY__';
 
+function extractInitialState() {
+    const localStorageItem = localStorage.getItem(STORAGE_KEY);
 
-function usePizzaStorage(): [PizzaState, DispatchPizzaActions] {
-    const [localStorageState, setState] = useLocalStorage(STORAGE_KEY, INITIAL_STATE);
-    const tuple = useReducer(reducer, localStorageState || INITIAL_STATE);
+    try {
+        return localStorageItem ? JSON.parse(localStorageItem) : INITIAL_STATE;
+    } catch (error) {
+        console.error('Can not parse localStorage', localStorageItem, error);
+
+        return INITIAL_STATE;
+    }
+}
+
+function usePizzaStorage(): [PizzaState, (action: Actions) => void] {
+    const tuple = useReducer(reducer, extractInitialState());
     const [state] = tuple;
-    setState(state);
+
+    useEffect(() => {
+        const stringifiedNewValue = JSON.stringify(state);
+
+        localStorage.setItem(STORAGE_KEY, stringifiedNewValue);
+    }, [state]);
 
     return tuple;
 }

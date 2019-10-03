@@ -22,7 +22,6 @@ const App: React.FC = () => {
                             <Route path={'/'} component={HomePage} exact />
                             <Route path={'/settings'} component={SettingsPage} exact />
                         </Switch>
-
                     </Container>
 
                     <Footer/>
@@ -50,7 +49,7 @@ const HomePage = () => (
 const SettingsPage = () => (
     <>
         <Row className='justify-content-center'>
-            <Col lg='auto' md='auto' sm='auto' xs='auto'>
+            <Col>
                 <Settings />
             </Col>
         </Row>

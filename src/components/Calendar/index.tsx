@@ -1,5 +1,5 @@
 import React, {FormEvent, useState} from 'react';
-import {Table} from 'react-bootstrap';
+import {Button, Table} from 'react-bootstrap';
 import dayjs, {Dayjs, UnitType} from 'dayjs';
 import classNames from 'classnames/bind';
 
@@ -16,10 +16,9 @@ const isSameOrBefore = (date1: Dayjs, date2: Dayjs, unit: UnitType) => {
     return date1.isSame(date2, unit) || date1.isBefore(date2, unit);
 };
 
-const CalendarRows = ({onDayClick}: {onDayClick: (day: string) => void}) => {
-    const now = dayjs();
-    const startOfMonth = now.startOf('month');
-    const endOfMonth = now.endOf('month');
+const CalendarRows = ({date, onDayClick}: {onDayClick: (day: string) => void, date: Dayjs}) => {
+    const startOfMonth = date.startOf('month');
+    const endOfMonth = date.endOf('month');
     const start = startOfMonth.startOf('week');
     const end = endOfMonth.endOf('week');
 
@@ -70,8 +69,11 @@ const CalendarRows = ({onDayClick}: {onDayClick: (day: string) => void}) => {
 };
 
 const Calendar = () => {
-    const now = dayjs();
-    const dispatch = usePizzaContext()[1];
+    const [date, setDate] = useState(dayjs());
+    const nextMonth = () => setDate(date.set('month', date.month() + 1));
+    const prevMonth = () => setDate(date.set('month', date.month() - 1));
+
+    const [, dispatch] = usePizzaContext();
     const [showModal, setShowModal] = useState(false);
     const [chosenDate, setChosenDate] = useState<null | string>(null);
 
@@ -94,9 +96,13 @@ const Calendar = () => {
 
     return (
         <div className={styles.root}>
-            <h3 className={styles.header}>
-                {now.format('MMMM')}
-            </h3>
+            <div className={styles.header}>
+                <Button variant="light" onClick={prevMonth}>{'\u25c4'}</Button>
+                <h3>
+                    {date.year() === dayjs().year() ? date.format('MMMM') : date.format('MMMM YYYY')}
+                </h3>
+                <Button variant="light" onClick={nextMonth}>{'\u25ba'}</Button>
+            </div>
             <Table bordered>
                 <thead>
                     <tr>
@@ -105,7 +111,7 @@ const Calendar = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <CalendarRows onDayClick={onShowModal}/>
+                    <CalendarRows onDayClick={onShowModal} date={date}/>
                 </tbody>
             </Table>
             <ScoreModal
