@@ -1,3 +1,12 @@
+/**
+ * @fileoverview
+ * Попытался сделать на хуках двухсторонний поток: чтобы писалось в локал-сторадж,
+ * а если там словилось обновление, то страница перерисовывалась
+ * Получилось. Но с редюсерами и стейтом выходит или громоздко, или ненадежно. Оставил только запись в localstorage
+ * @deprecated
+ * @see usePizzaStorage
+ */
+
 import { useState, useEffect } from 'react';
 import {fromEvent, of, EMPTY, Subject, Observable} from "rxjs";
 import {catchError, mergeAll, mergeMap} from 'rxjs/operators';

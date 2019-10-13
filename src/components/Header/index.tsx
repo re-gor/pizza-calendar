@@ -20,7 +20,12 @@ export default () => (
                     <Nav>
                         <LinkContainer to='/' exact>
                             <Nav.Link>
-                                Home
+                                Calendar
+                            </Nav.Link>
+                        </LinkContainer>
+                        <LinkContainer to='/stats' exact>
+                            <Nav.Link>
+                                Stats
                             </Nav.Link>
                         </LinkContainer>
                         <LinkContainer to='/settings' exact>

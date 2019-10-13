@@ -16,6 +16,9 @@ function extractInitialState() {
     }
 }
 
+/**
+ * Добавляет компоненту редюсер, dispatch и дампинг в localStorage
+ */
 function usePizzaStorage(): [PizzaState, (action: Actions) => void] {
     const tuple = useReducer(reducer, extractInitialState());
     const [state] = tuple;
