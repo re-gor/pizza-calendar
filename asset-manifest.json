@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.77db60b8.chunk.css",
-    "main.js": "/static/js/main.41532fe6.chunk.js",
-    "main.js.map": "/static/js/main.41532fe6.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.775709df.js",
-    "runtime~main.js.map": "/static/js/runtime~main.775709df.js.map",
-    "static/css/2.6a58fec0.chunk.css": "/static/css/2.6a58fec0.chunk.css",
-    "static/js/2.53eccc67.chunk.js": "/static/js/2.53eccc67.chunk.js",
-    "static/js/2.53eccc67.chunk.js.map": "/static/js/2.53eccc67.chunk.js.map",
+    "main.js": "./static/js/main.41532fe6.chunk.js",
+    "main.js.map": "./static/js/main.41532fe6.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.775709df.js",
+    "runtime~main.js.map": "./static/js/runtime~main.775709df.js.map",
+    "static/css/2.6a58fec0.chunk.css": "./static/css/2.6a58fec0.chunk.css",
+    "static/js/2.53eccc67.chunk.js": "./static/js/2.53eccc67.chunk.js",
+    "static/js/2.53eccc67.chunk.js.map": "./static/js/2.53eccc67.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.378d5118078305865703e768e565b8b7.js": "/precache-manifest.378d5118078305865703e768e565b8b7.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.6a58fec0.chunk.css.map": "/static/css/2.6a58fec0.chunk.css.map",
-    "static/css/main.77db60b8.chunk.css.map": "/static/css/main.77db60b8.chunk.css.map",
-    "static/media/styles.module.css": "/static/media/pizza_slice_mono.2e280982.svg",
-    "static/media/pizza_heart.svg": "/static/media/pizza_heart.c4a46534.svg"
+    "precache-manifest.378d5118078305865703e768e565b8b7.js": "./precache-manifest.378d5118078305865703e768e565b8b7.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/2.6a58fec0.chunk.css.map": "./static/css/2.6a58fec0.chunk.css.map",
+    "static/css/main.77db60b8.chunk.css.map": "./static/css/main.77db60b8.chunk.css.map",
+    "static/media/styles.module.css": "./static/media/pizza_slice_mono.2e280982.svg",
+    "static/media/pizza_heart.svg": "./static/media/pizza_heart.c4a46534.svg"
   }
 }
