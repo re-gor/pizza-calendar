@@ -17,13 +17,15 @@ export const setDayInfo: ActionCreator<
     type: SET_DAY_INFO,
     payload: {score, date, comment},
 });
-export const setSettings: ActionCreator<typeof SET_SETTINGS, {dailyGoal: number, goal: number}> = ({
+export const setSettings: ActionCreator<typeof SET_SETTINGS, {dailyGoal: number, dailyBonus:number, goal: number}> = ({
     dailyGoal,
+    dailyBonus,
     goal
 }) => ({
     type: SET_SETTINGS,
     payload: {
         dailyGoal,
+        dailyBonus,
         goal
     },
 });

@@ -17,7 +17,7 @@ const ScoreModal = ({
 }: Props) => {
     const [state] = usePizzaContext();
     const {settings, calendar} = state;
-    const {dailyGoal} = settings;
+    const {dailyGoal, dailyBonus} = settings;
     const {score = 0, comment = ''} = calendar[date] || {};
 
     return (
@@ -48,7 +48,7 @@ const ScoreModal = ({
                             aria-describedby="daily-score"
                             defaultValue={String(score || 0)}
                         >
-                            {(new Array(dailyGoal + 1)).fill(null).map((_, i) => (
+                            {(new Array(dailyGoal + dailyBonus + 1)).fill(null).map((_, i) => (
                                 <option key={i}>{i}</option>
                             ))}
                         </FormControl>

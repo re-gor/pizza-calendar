@@ -12,11 +12,12 @@ const Settings = () => {
         const formData = new FormData(event.currentTarget);
         const goal = Number(formData.get('goal'));
         const dailyGoal = Number(formData.get('dailyGoal'));
+        const dailyBonus = Number(formData.get('dailyBonus'));
 
-        if (!goal || !dailyGoal || goal <= 0 || dailyGoal <= 0) {
+        if (!goal || !dailyGoal || !dailyBonus || goal <= 0 || dailyGoal <= 0 || dailyBonus < 0) {
             alert('Bad preferences')
         } else {
-            dispatch(setSettings({goal, dailyGoal}));
+            dispatch(setSettings({goal, dailyGoal, dailyBonus}));
         }
         console.log(Array.from(formData.entries()));
 
@@ -40,6 +41,14 @@ const Settings = () => {
                                     </Form.Label>
                                     <Form.Control as='input' name='dailyGoal' type="number"
                                                   defaultValue={settings.dailyGoal}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label>
+                                        Daily bonus points
+                                    </Form.Label>
+                                    <Form.Control as='input' name='dailyBonus' type="number"
+                                                  defaultValue={settings.dailyBonus}
                                     />
                                 </Form.Group>
                                 <Form.Group>

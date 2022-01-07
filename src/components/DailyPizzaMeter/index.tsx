@@ -3,7 +3,7 @@ import styles from './styles.module.css';
 
 const DailyPizzaMeter = ({level, max, width, height}: {level: number, max: number, width?: number, height?: number}) => {
     const style = {
-        height: Math.ceil(level / max * 100) + '%',
+        height: Math.ceil(Math.min(level, max) / max * 100) + '%',
     };
 
     const rootStyle = {

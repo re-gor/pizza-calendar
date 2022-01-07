@@ -8,6 +8,7 @@ export type PizzaState = {
     eatenPizzasCount: number,
     settings: {
         dailyGoal: number,
+        dailyBonus: number,
         goal: number
     }
 }
@@ -17,6 +18,7 @@ export const INITIAL_STATE: PizzaState = {
     eatenPizzasCount: 0,
     settings: {
         dailyGoal: 6,
+        dailyBonus: 0,
         goal: 160,
     }
 };
