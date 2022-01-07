@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "gh-pages": "bash ./make_gh_pages.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
