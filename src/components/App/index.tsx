@@ -11,9 +11,15 @@ import Settings from 'components/Settings';
 import Stats from 'components/Stats';
 import styles from './styles.module.css';
 
+let basename = '/';
+
+if (process.env.NODE_ENV === 'production') {
+    basename = '/pizza-calendar/';
+}
+
 const App: React.FC = () => {
     return (
-        <Router>
+        <Router basename={basename}>
             <div className="App">
                 <PizzaContextProvider>
                     <Header/>
