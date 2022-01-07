@@ -1,5 +1,6 @@
 .row {
     width: 100%;
+    font-size: .8rem;
 }
 
 .padder {
@@ -9,20 +10,13 @@
     bottom: 0;
 }
 
-@media (max-width: 440px) {
+@media (max-width: 500px), (max-height: 600px) {
     .padder {
-        height: 180px;
+        height: 50px;
     }
-}
 
-@media (max-width: 370px) {
-    .padder {
-        height: 190px;
-    }
-}
-
-@media (max-width: 200px) {
-    .padder {
-        height: 200px;
+    :global(.navbar-text.navbar-text) {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }

@@ -57,3 +57,19 @@
     left: 0;
     background-color: rgba(255, 255, 255, .4);
 }
+
+
+@media (max-width: 500px) {
+    .root {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .root table td {
+        padding: .5rem .2rem;
+    }
+
+    .header h3 {
+        font-size: 1.3rem;
+    }
+}
